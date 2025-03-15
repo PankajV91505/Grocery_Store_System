@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 import products_dao
 import uom_dao
-from mysql_connection import get_sql_connection
 
 app = Flask(__name__)
 
