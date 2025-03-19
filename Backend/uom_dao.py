@@ -1,3 +1,4 @@
+
 def get_uoms(connection):
     cursor = connection.cursor()
     query = ("select * from uom")
@@ -11,12 +12,9 @@ def get_uoms(connection):
     return response
 
 
-def new_func():
-    connection = get_sql_connection()
-    return connection
-
 if __name__ == '__main__':
     from sql_connection import get_sql_connection
 
-    connection = new_func()
+    connection = get_sql_connection()
+    # print(get_all_products(connection))
     print(get_uoms(connection))

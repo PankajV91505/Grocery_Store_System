@@ -5,7 +5,7 @@ var productModal = $("#productModal");
         $.get(productListApiUrl, function (response) {
             if(response) {
                 var table = '';
-                $.each(response, function(index, product) {
+                $.each(response, function(_, product) {
                     table += '<tr data-id="'+ product.product_id +'" data-name="'+ product.name +'" data-unit="'+ product.uom_id +'" data-price="'+ product.price_per_unit +'">' +
                         '<td>'+ product.name +'</td>'+
                         '<td>'+ product.uom_name +'</td>'+
@@ -67,7 +67,7 @@ var productModal = $("#productModal");
         $.get(uomListApiUrl, function (response) {
             if(response) {
                 var options = '<option value="">--Select--</option>';
-                $.each(response, function(index, uom) {
+                $.each(response, function(_, uom) {
                     options += '<option value="'+ uom.uom_id +'">'+ uom.uom_name +'</option>';
                 });
                 $("#uoms").empty().html(options);
